@@ -1,0 +1,28 @@
+// Import stylesheets
+import "./style.css";
+
+function bubbleSort(arr) {
+  
+}
+
+function processForm(e) {
+  if (e.preventDefault) e.preventDefault();
+  /*
+   * Perform operations on form submit.
+   */
+  let strSampleString = document.getElementById("idInpSampleString").value;
+  document.getElementById("idSpanReversedString").innerHTML = reverseString1(
+    strSampleString
+  );
+  /*
+   * You must return "false" to prevent the default form behavior.
+   */
+  return false;
+}
+
+var form = document.getElementById("idFormStringReverse");
+if (form.attachEvent) {
+  form.attachEvent("submit", processForm);
+} else {
+  form.addEventListener("submit", processForm);
+}
