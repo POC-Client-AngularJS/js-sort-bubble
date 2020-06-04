@@ -1,7 +1,21 @@
 // Import stylesheets
 import "./style.css";
 
-function bubbleSort(arr) {
+function descBubbleSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+function ascBubbleSort(arr) {
   let n = arr.length;
   for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < n - i - 1; j++) {
@@ -39,7 +53,7 @@ function processForm(e) {
     .value.toString()
     .split(",");
   let arrInputValuesNumber = convertArrayValuesToNumber(arrInputValues);
-  document.getElementById("idSpanSortedArray").innerHTML = bubbleSort(
+  document.getElementById("idSpanSortedArray").innerHTML = descBubbleSort(
     arrInputValuesNumber
   );
   /*
